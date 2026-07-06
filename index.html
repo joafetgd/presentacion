@@ -97,7 +97,7 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('cr7 united.jpeg');
+    background-image: url('cr7-united.jpeg');
     background-size: cover;
     background-position: center top;
     filter: brightness(0.45) saturate(0.6);
@@ -735,7 +735,7 @@
     .quote-mark-bg { font-size: 26rem; top: -12rem; opacity: 0.7; }
 
     /* EVENT SLIDES — imagen arriba, texto abajo, con scroll dentro del slide si hace falta */
-    .slide-event { overflow-y: auto; }
+    .slide-event { justify-content: flex-start; overflow-y: auto; -webkit-overflow-scrolling: touch; }
     .event-grid, .event-grid.flip {
       grid-template-columns: 1fr;
       gap: 1.1rem;
@@ -760,9 +760,12 @@
     .stat-label { font-size: 0.56rem; letter-spacing: 0.14em; }
 
     /* LEGADO */
-    .legado-layout { grid-template-columns: 1fr; grid-template-rows: 40vh 1fr; height: auto; min-height: 100%; }
-    .legado-photo { height: 40vh; }
-    .legado-quote-text { font-size: clamp(1.05rem, 5vw, 1.35rem); }
+    .legado-layout { grid-template-columns: 1fr; grid-template-rows: minmax(260px, 46vh) auto; height: auto; min-height: 100%; }
+    .legado-photo { height: auto; min-height: 260px; }
+    .legado-quote { left: 1rem; right: 1rem; bottom: 0.9rem; }
+    .legado-quote-mark { font-size: 2.1rem; }
+    .legado-quote-text { font-size: clamp(0.92rem, 4vw, 1.15rem); line-height: 1.3; }
+    .legado-quote-attr { font-size: 0.58rem; margin-top: 0.5rem; }
     .legado-content { padding: 1.6rem 1.4rem 2rem; }
     .legado-heading { font-size: clamp(1.5rem, 7vw, 1.9rem); margin-bottom: 1.2rem; }
     .legado-watermark { display: none; }
@@ -770,7 +773,11 @@
     .legado-num { font-size: 1.3rem; }
     .legado-title { font-size: 0.92rem; }
     .legado-desc { font-size: 0.82rem; line-height: 1.6; }
-    .slide-legado { overflow-y: auto; }
+    .slide-legado {
+      justify-content: flex-start;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
 
     /* CLOSING */
     .fin-title { font-size: clamp(2.4rem, 12vw, 3.2rem); }
